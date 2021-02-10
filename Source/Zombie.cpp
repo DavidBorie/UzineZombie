@@ -29,11 +29,59 @@ int Personnage::getPv() const
 }
 
 void Personnage::setPv(int s) {
-	if (s > 1000 || s < 0) {
-		cerr << "pv non autorisé" << endl;
+	if (s > 200 || s < 201 ) {
+		cerr << "pv non autorise" << endl;
 		pv = 0;
 	}
 	else {
 		pv = s;
+
+		string Personnage::getNom() const
+{
+	return nom;
+}
+
+void Personnage::setNom(string n)
+{
+	nom = n;
+}
+
+void Personnage::setAttack(int a)
+{
+	if (a < 0) {
+		attack = 0;
+	}
+	else {
+		attack = a;
 	}
 }
+
+
+int Personnage::getHeal() const
+{
+	return heal;
+}
+
+void Personnage::setHeal(int h)
+{
+	if (h < 0) {
+		heal = 0;
+	}
+	else {
+		heal = h;
+	}
+}
+
+Arme* Personnage::getArme() const
+{
+    return arme;
+}
+
+void Personnage::setArme(Arme* a){
+    arme = a;
+
+	void Personnage::showInfos() const
+{
+	cout << "nom : " << getNom() << endl;
+	cout << "pv : " << getPv() << endl;
+	cout << "attack : " << getAttack() << endl;
